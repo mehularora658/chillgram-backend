@@ -86,7 +86,9 @@ app.post("/auth/register", upload.single("picture"), register);
 app.post("/post", verifyToken, upload.single("picture"), createPost);
 
 //ROUTES
-
+app.get('/test/api',async(req,resp)=>{
+    resp.json({msg:"Everything working fine"})
+})
 app.use("/auth", authRoutes);
 app.use("/users", userRoutes);
 app.use("/posts", postRoutes);
